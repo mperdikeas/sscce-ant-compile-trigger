@@ -1,0 +1,2 @@
+#!/bin/bash
+touch src/A.java ; stat -c '%y' src/A.java build/classes/A.class ; ant 2>&1 | grep Compiling ; stat -c '%y' src/A.java build/classes/A.class

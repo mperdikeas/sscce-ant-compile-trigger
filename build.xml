@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="foo"
+         basedir="."
+         default="compile"
+>
+
+    <!-- using fork="true" or even using an external compiler with:
+         
+            executable="/some/path/to/jdk-1.7.0.95.Linux64/bin/javac
+    -->
+    
+    <target name = "compile">
+        <mkdir dir="${basedir}/build/classes"/>        
+        <javac compiler="modern"
+               srcdir="${basedir}/src"
+               destdir="${basedir}/build/classes"
+               source="1.7"
+               target="1.7"
+               verbose="no"
+               >
+            <include name="**/*.java"/>
+        </javac>
+    </target>
+
+    <target name="clean">
+        <delete dir="${basedir}/build"/>
+    </target>
+
+</project>
+
+
