@@ -1,2 +1,6 @@
 #!/bin/bash
-touch src/A.java ; stat -c '%y' src/A.java build/classes/A.class ; ant 2>&1 | grep Compiling ; stat -c '%y' src/A.java build/classes/A.class
+if [ -d "build" ]; then
+    touch src/A.java ; stat -c '%y' src/A.java build/classes/A.class ; ant 2>&1 | grep Compiling ; stat -c '%y' src/A.java build/classes/A.class
+else
+    printf "\nFor the very first time only (or following an 'ant clean'), type 'ant' first to create the compiled class.\n\n"
+fi
