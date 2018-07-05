@@ -4,9 +4,15 @@
          default="compile"
 >
 
-    <!-- using fork="true" or even using an external compiler with:
+    <!-- using:
+
+             fork="true"
+
+         ... or even using an external compiler with:
          
-            executable="/some/path/to/jdk-1.7.0.95.Linux64/bin/javac
+             executable="/some/path/to/jdk-1.7.0.95.Linux64/bin/javac
+
+        ... makes no difference.
     -->
     
     <target name = "compile">
